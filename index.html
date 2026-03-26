@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Professional Skills ⚗️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Skill Card */
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .skill-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Wheel Container */
+        .wheel-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 25px;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: rotate 20s linear infinite;
+        }
+
+        .wheel:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .wheel-segment {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: 100% 100%;
+            left: 0;
+            top: 0;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        /* Different colors for segments */
+        .wheel-segment:nth-child(1) { background: #667eea; transform: rotate(0deg); }
+        .wheel-segment:nth-child(2) { background: #764ba2; transform: rotate(36deg); }
+        .wheel-segment:nth-child(3) { background: #f093fb; transform: rotate(72deg); }
+        .wheel-segment:nth-child(4) { background: #f5576c; transform: rotate(108deg); }
+        .wheel-segment:nth-child(5) { background: #4facfe; transform: rotate(144deg); }
+        .wheel-segment:nth-child(6) { background: #00f2fe; transform: rotate(180deg); }
+        .wheel-segment:nth-child(7) { background: #43e97b; transform: rotate(216deg); }
+        .wheel-segment:nth-child(8) { background: #38f9d7; transform: rotate(252deg); }
+        .wheel-segment:nth-child(9) { background: #fa709a; transform: rotate(288deg); }
+        .wheel-segment:nth-child(10) { background: #fee140; transform: rotate(324deg); }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #1e3c72;
+            font-size: 0.8rem;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Skills List */
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .skill-percentage {
+            font-weight: 600;
+            color: #fee140;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animations for cards */
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
+        .skill-card:nth-child(7) { animation-delay: 0.7s; }
+        .skill-card:nth-child(8) { animation-delay: 0.8s; }
+        .skill-card:nth-child(9) { animation-delay: 0.9s; }
+        .skill-card:nth-child(10) { animation-delay: 1s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .stats-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Background decoration */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-decoration::before,
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .bg-decoration::before {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+
+        .bg-decoration::after {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            bottom: -100px;
+            left: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Chemistry Professional Skills ⚗️</h1>
+            <p class="subtitle">Professional Portfolio</p>
+            <p class="tagline">Chemistry Analytical & Research Professional</p>
+            <p style="opacity: 0.7; font-size: 0.95rem;">Applying scientific rigor to solve real-world chemical and data-driven problems</p>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-number">10</span>
+                <span class="stat-label">Core Skills</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100</span>
+                <span class="stat-label">Competencies</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Dedication</span>
+            </div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="section-title">
+            <h2>Core Competencies</h2>
+        </div>
+        <p class="section-description">
+            Explore my professional skill set through interactive rotating wheels. Each wheel represents a core competency with 10 measurable sub-skills.
+        </p>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+            <!-- Skill 1: Analytical Thinking -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">1</div>
+                    <h3 class="skill-title">Analytical Thinking</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">15%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Logical Reasoning</span><span class="skill-percentage">15%</span></div>
+                    <div class="skill-item"><span class="skill-name">Critical Questioning</span><span class="skill-percentage">15%</span></div>
+                    <div class="skill-item"><span class="skill-name">Evidence Evaluation</span><span class="skill-percentage">15%</span></div>
+                    <div class="skill-item"><span class="skill-name">Systems Thinking</span><span class="skill-percentage">15%</span></div>
+                    <div class="skill-item"><span class="skill-name">Root Cause Analysis</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Pattern Recognition</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Data Categorization</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Statistical Literacy</span><span class="skill-percentage">5%</span></div>
+                    <div class="skill-item"><span class="skill-name">Hypothesis Testing</span><span class="skill-percentage">3%</span></div>
+                    <div class="skill-item"><span class="skill-name">Information Synthesis</span><span class="skill-percentage">2%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 2: Problem-Solving Ability -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">2</div>
+                    <h3 class="skill-title">Problem-Solving Ability</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Problem Identification</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Information Gathering</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Ideation & Brainstorming</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Decision Making</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Implementation Planning</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Monitoring & Evaluation</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Adaptability & Pivot Speed</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Creative Resourcefulness</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Root Cause Analysis</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Solution Scaling</span><span class="skill-percentage">9%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 3: Attention to Detail -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">3</div>
+                    <h3 class="skill-title">Attention to Detail</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Observation & Accuracy</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Error Detection</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Consistency in Quality</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Active Listening</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Organizational Skills</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Verification & Proofing</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Focus & Concentration</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Procedural Compliance</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Pattern Recognition</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Data Integrity</span><span class="skill-percentage">9%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 4: Communication Skills -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">4</div>
+                    <h3 class="skill-title">Communication Skills</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Active Listening</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Clarity and Conciseness</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Technical Translation</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Non-Verbal Communication</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Written Proficiency</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Public Speaking & Presentation</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Empathy & Emotional Intelligence</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Feedback Delivery & Reception</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Negotiation & Persuasion</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Cultural Sensitivity</span><span class="skill-percentage">9%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 5: Teamwork & Collaboration -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">5</div>
+                    <h3 class="skill-title">Teamwork & Collaboration</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Conflict Resolution</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Active Listening & Empathy</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Reliability & Accountability</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Cross-Functional Communication</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Shared Goal Alignment</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Constructive Feedback</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Task Delegation</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Interpersonal Influence</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Trust Building</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Knowledge Sharing</span><span class="skill-percentage">9%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 6: Time Management -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">6</div>
+                    <h3 class="skill-title">Time Management</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">12%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Prioritization (Eisenhower Matrix)</span><span class="skill-percentage">12%</span></div>
+                    <div class="skill-item"><span class="skill-name">Goal Setting (SMART Criteria)</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Task Scheduling & Planning</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Focus & Deep Work Capacity</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Deadline Adherence</span><span class="skill-percentage">12%</span></div>
+                    <div class="skill-item"><span class="skill-name">Delegation & Outsourcing</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Procrastination Mitigation</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Time Tracking & Analysis</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Boundary Setting</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Workflow Optimization</span><span class="skill-percentage">8%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 7: Critical Thinking -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">7</div>
+                    <h3 class="skill-title">Critical Thinking</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Objective Analysis</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Bias Identification</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Logical Fallacy Detection</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Inference and Deduction</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Evidence Evaluation</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Alternative Perspective Synthesis</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Problem Decomposition</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Metacognition (Self-Reflection)</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Systems Thinking</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Skepticism & Inquiry</span><span class="skill-percentage">8%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 8: Research Skills -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">8</div>
+                    <h3 class="skill-title">Research Skills</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Literature Review & Synthesis</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Methodology Design</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Information Literacy & Sourcing</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Data Collection</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Technical Documentation</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Academic Integrity & Citation</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Critical Evaluation of Sources</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Hypothesis Testing</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Quantitative Analysis</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Qualitative Interviewing</span><span class="skill-percentage">9%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 9: Data Interpretation -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">9</div>
+                    <h3 class="skill-title">Data Interpretation</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">12%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Statistical Significance Assessment</span><span class="skill-percentage">12%</span></div>
+                    <div class="skill-item"><span class="skill-name">Pattern & Trend Recognition</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Anomaly & Outlier Detection</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Data Visualization Literacy</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Correlation vs. Causation Analysis</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Predictive Modeling Accuracy</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Hypothesis Validation</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Inference Drawing</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Data Cleaning/Wrangling</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Contextual Application</span><span class="skill-percentage">8%</span></div>
+                </div>
+            </div>
+
+            <!-- Skill 10: Scientific Writing -->
+            <div class="skill-card">
+                <div class="skill-header">
+                    <div class="skill-number">10</div>
+                    <h3 class="skill-title">Scientific Writing</h3>
+                </div>
+                <div class="wheel-container">
+                    <div class="wheel">
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                        <div class="wheel-segment"></div>
+                    </div>
+                    <div class="wheel-center">11%</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item"><span class="skill-name">Structural Organization (IMRaD)</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Technical Clarity & Precision</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Objectivity & Tone Consistency</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Citation & Bibliography Accuracy</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Data-Text Integration</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Grammar & Syntax Rigor</span><span class="skill-percentage">11%</span></div>
+                    <div class="skill-item"><span class="skill-name">Abstract & Summary Synthesis</span><span class="skill-percentage">10%</span></div>
+                    <div class="skill-item"><span class="skill-name">Peer Review Revision Adaptability</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Visual Aid Integration</span><span class="skill-percentage">9%</span></div>
+                    <div class="skill-item"><span class="skill-name">Ethical Reporting</span><span class="skill-percentage">8%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
